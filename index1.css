@@ -1,0 +1,779 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --bg-color: #f8f9fa;
+  --text-color: #333;
+  --black: #111;
+  --white: #fff;
+  --gray-light: #e9ecef;
+  --border-radius: 20px;
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+
+body {
+  background-image: url("songs/front/f16.jpg");
+   margin: 0;
+  color: var(--text-color);
+  overflow-x: hidden;
+    padding-top: 90px; 
+}
+  .container {
+    display: flex;
+    justify-content: space-between; /* pushes left and right */
+    align-items: center;
+    padding: 20px;
+  }
+.tops{
+    cursor: pointer;
+}
+  .left,.leftM{
+    display: none;
+    text-align: left;
+
+  }
+  .cus{
+    font-size: 4rem;
+   text-align: center;
+    margin: auto;
+    padding: 10px;
+
+
+  }
+  .M{
+      font-size: 4rem;
+   text-align: center;
+    margin: auto;
+    padding: 10px;
+
+
+  }
+  .F{
+      font-size: 4rem;
+   text-align: center;
+    margin: auto;
+
+
+  }
+
+  .center, .centerM {
+    display: none;
+ 
+    flex-direction: column;
+    gap:15px;
+    text-align: center;
+    border: px solid;
+    max-width: 400px;
+    max-height: 1000px;
+    padding: 100px;
+  }
+
+/* Shirt - Medium */
+#mainImage, #mainImageM { 
+  width: 200px; 
+  margin: 0 auto;
+}
+
+/* Pants - Largest */
+#mainImage2, #mainImageM2 { 
+  width: 160px; 
+  margin: -10px auto; /* Negative margin pulls them slightly closer to the shirt */
+}
+.cust{
+  
+}
+/* Shoes - Smallest */
+#mainImage3, #mainImageM3 { 
+  width: 140px; 
+  margin: 0 auto;
+}
+
+  .right, .rightM {
+    display: none;
+    text-align: right;
+  }
+
+  img {
+    width: 120px;}
+
+.myIma1{
+    /*display: none;*/
+    cursor: pointer;
+}
+.shoes,.shoesM{
+
+    display: none;
+text-align: center;
+gap:14px;
+    margin: auto;
+    padding: 10px;
+}
+.customs{
+  
+  display: none;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.custom{
+  background-color:rgb(36, 185, 153);
+   text-align: center;
+    max-width: 350px;
+    margin: auto;
+  font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: white;
+     font-family: cursive;
+ 
+}
+.custom,.downloadM, .download, .RandomizerM,.RandomizerF:hover{
+  cursor: pointer;
+  background-color: rgb(95, 187, 167);
+}
+ .maleCust{
+  background-color: darkblue;
+  color: white; 
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+     font-family: cursive;
+ 
+
+ }
+  .femaleCust{
+  background-color: palevioletred;
+  color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+ font-family: cursive;
+ 
+ }
+ .well{
+    display: flex;
+  flex-direction: column;
+  font-family:cursive;
+  backdrop-filter: blur(15px);
+  color: white;
+
+ }
+.show{
+  display: flex;
+  border: 2px solid;
+}
+
+section {
+  
+     min-height: 100vh;
+  padding: 100px 8% 50px;
+}
+.customize{
+     backdrop-filter: blur(15px);
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 8%;
+ 
+  backdrop-filter: blur(135px);
+
+  display: flex;              /* 🔥 IMPORTANT */
+  justify-content: space-between;
+  align-items: center;        /* vertically center */
+}
+
+.logo {
+   position: relative;
+    z-index: 10001;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color:brown
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+/* Make ul horizontal */
+.nav-link {
+  display: flex;              /* 🔥 Important */
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+   z-index: 10001;
+}
+
+.nav-link li a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  text-decoration: none;
+  display: inline-block;      /* Needed for transform */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover */
+.nav-link li a:hover {
+  color: purple;
+  transform: scale(1.1);
+}
+
+/* Active */
+.nav-link li a.active {
+  color: purple;
+  transform: scale(1.15);
+  font-weight: bold;
+}
+.menu-icon { display: none; font-size: 28px; cursor: pointer; }
+.home{
+  font-size: 4rem;
+     text-align: center;
+    margin: auto;
+     
+
+}
+.downloadM, .download, .RandomizerM,.RandomizerF{
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 10px;
+  background-color:rgb(36, 185, 153);
+  border-radius: 20px;
+   font-family: cursive;
+ 
+}
+.about-cloth{
+  color: white;
+     backdrop-filter: blur(15px);
+  font-size: 4rem;
+   text-align: center;
+    margin: auto;
+    padding: 50px 20px;
+    font-family: cursive;
+}
+#cloth{
+   font-family: cursive;
+ 
+}
+#cloth1{
+  font-weight: bold;
+   font-family: cursive;
+ 
+}
+.cloth-para{
+  display: flex;
+  flex-direction: column;
+  font-family: cursive;
+
+
+}
+@media (max-width: 600px) {
+  .container{
+    flex-direction: column;
+  }
+
+  .home{
+    flex-direction: column;
+  }
+
+  .container.leftM {
+    max-height: none;
+  }
+}
+.slider img,p{
+  text-align: center;
+    width: 70vh;
+    margin: auto;
+    padding: 10px;
+    border-radius: 25px;
+    display: none;
+}
+img.displaySlide{
+    display: block;
+    animation: fade;
+    animation-duration: 1.5s;
+}
+p.displaySlide{
+    display: block;
+    animation: fade;
+    animation-duration: 1.5s;
+}
+.slides{
+   backdrop-filter: blur(15px);
+    text-align: center;
+    max-width: 100vh;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px;
+}
+.para{
+
+    display: flex;
+ align-items: flex-start;   /*top align image & lyrics */
+  gap: 30px;                 /* space between image & lyrics */
+  margin-bottom: 10px;
+         backdrop-filter: blur(15px);
+    text-align: center;
+    max-width: 100vh;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px;
+}
+.AB, .AB2,.AB3{
+    display: flex;
+    flex-direction: column;
+    background-color:white;
+    text-align: center;
+    max-width: 100vh;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px;
+    gap: 20px;
+    overflow: scroll;
+}
+ .button button{
+   margin: 20px;
+    padding: 10px 20px;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    color:black;
+    border: none;
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+ .button button:hover{
+   background-color: gray;
+   cursor: pointer;
+
+ }
+ @keyframes fade{
+    from{opacity: .5}
+    to{opacity: 1}
+}
+.cust{
+  border: 2px solid;
+    display: flex;
+    flex-direction: column;
+     background-color: white;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px;
+}
+
+/* =========================
+   RESPONSIVE OVERRIDES (Global)
+========================= */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   TABLET RESPONSIVENESS (1024px and below)
+========================= */
+@media (max-width: 1024px) {
+  .home {
+    font-size: 4rem; /* Scale down from 6rem */
+  }
+
+  .about-cloth {
+    font-size: 3rem; /* Scale down from 4rem */
+  }
+
+  .slider img {
+    width: 80%; /* Adjust from 70vh for better fit */
+  }
+
+  .AB, .AB2 {
+    max-width: 90%; /* Prevent overflow on tablets */
+  }
+
+  .container {
+    flex-wrap: wrap; /* Allow sections to wrap if they hit edges */
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .center, .centerM {
+    padding: 40px; /* Reduce large 100px padding */
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS (768px and below)
+========================= */
+@media (max-width: 768px) {
+  /* Header Adjustments */
+  .header {
+    padding: 15px 5%;
+  }
+  
+  .nav-link {
+    gap: 10px;
+  }
+
+  .nav-link li a {
+    font-size: 0.8rem;
+  }
+
+  /* Typography */
+  .home {
+    font-size: 2.5rem;
+    padding-top: 120px;
+  }
+
+  .about-cloth {
+    font-size: 2rem;
+    padding: 30px 10px;
+  }
+
+  .cus, .M, .F {
+    font-size: 2rem;
+  }
+
+  /* Home Slider */
+  .slider img {
+    width: 95%;
+  }
+
+  .slides {
+    max-width: 95%;
+  }
+
+  /* About Section Paragraphs */
+  .para {
+    align-items: center;
+  }
+
+  .AB, .AB2, .AB3 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Customize Section (The Container) */
+  .container {
+    flex-direction: column; /* Stack Left, Center, and Right vertically */
+    padding: 10px;
+  }
+
+  .left, .leftM, .right, .rightM {
+    text-align: center; /* Center align items for mobile */
+    width: 100%;
+  }
+
+  /* Fix for the Center Image area */
+  .center, .centerM {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 0;
+  }
+
+  .center img, .centerM img {
+    width: 200px; /* Scale down preview images */
+    margin: 0 auto;
+  }
+
+  .mainF, .mainM {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Shoes/Bottom section images */
+  .shoes, .shoesM {
+    display: flex;
+    flex-wrap: wrap; /* Allow shoe icons to wrap to next line */
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .shoes img, .shoesM img {
+    width: 80px; /* Smaller icons for mobile screens */
+  }
+
+  /* Buttons */
+  .custom {
+    width: 90%;
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   SMALL MOBILE FIXES (480px and below)
+========================= */
+@media (max-width: 480px) {
+  .home {
+    font-size: 2rem;
+  }
+
+  .header .logo {
+    font-size: 1.2rem;
+  }
+
+  /* Ensure the "Customize" layout components take full width */
+  .left img, .leftM img, .right img, .rightM img {
+    width: 100px;
+    margin: 5px;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE FIX
+========================= */
+
+@media (max-width: 768px) {
+    /* Maintain the 3-column layout on mobile */
+    .container {
+        display: flex !important;
+        flex-direction: row !important; /* Forces horizontal layout like desktop */
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 5px;
+        gap: 5px;
+    }
+
+    /* Scale down images to fit 3 columns on a small screen */
+    .left, .leftM, .right, .rightM {
+        flex: 1;
+        display: none; /* Controlled by JS */
+    }
+
+    .left img, .leftM img, .right img, .rightM img {
+        width: 60px; /* Smaller images to fit side-by-side */
+        margin: 2px 0;
+    }
+
+    .center, .centerM {
+        flex: 2;
+        padding: 10px 0 !important;
+        display: none; /* Controlled by JS */
+    }
+
+    .center img, .centerM img {
+        width: 120px; /* Scaled down preview */
+    }
+
+    /* Shoes and Randomizer at the bottom */
+    .shoes, .shoesM {
+        width: 100%;
+        text-align: center;
+        display: none; /* Controlled by JS */
+    }
+
+    .shoes img, .shoesM img {
+        width: 50px;
+        margin: 5px;
+    }
+
+    /* Section Button Styling */
+    .M, .F {
+        margin-bottom: 20px;
+    }
+}
+/* =========================
+   MOBILE STACKING FIX
+========================= */
+
+@media (max-width: 768px) {
+    /* 1. Fix for the About Section Boxes (Wear Your Story, etc.) */
+    .para {
+        flex-direction: column !important; /* Forces them to stack vertically */
+        align-items: center !important;
+        gap: 20px;
+    }
+
+    .AB, .AB2 {
+        width: 95% !important; /* Makes boxes take up full screen width */
+        max-width: 100% !important;
+        height: auto !important; /* Allows box to grow with text */
+        margin: 10px auto;
+        overflow: visible; /* Prevents text from being cut off */
+    }
+
+    /* 2. Fix for the Customize Section (Left, Center, Right) */
+    .container {
+        flex-direction: column !important; /* Moves Left, Center, and Right sections down */
+        align-items: center !important;
+        padding: 10px;
+    }
+
+    .left, .leftM, .right, .rightM, .center, .centerM {
+        width: 100% !important;
+        text-align: center !important;
+        display: none; /* Controlled by your JS toggle */
+    }
+
+    /* Adjust image sizes so they don't look too big when stacked */
+    .left img, .leftM img, .right img, .rightM img {
+        width: 100px; 
+        margin: 5px;
+    }
+
+    .center img, .centerM img {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    /* Fix for the Header/Logo area overlapping */
+    .header {
+        backdrop-filter: blur(25px); /* Ensure header is readable over text */
+      .header{
+    position: fixed;      /* Keeps header fixed when scrolling */
+    top: 0;               /* Stick to the top */
+    left: 0;
+    width: 100%;          /* Full width */
+    z-index: 10000;       /* Ensures it stays above all sections */
+    background: white;    /* Prevent text behind it from showing */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5%;
+}
+    }
+    body{
+      width: 100%;
+    }
+}
+
+/* Ensure the footer is always at the bottom if content is short */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+    padding: 20px;
+    background: #333; /* Or your preferred color */
+    color: white;
+    text-align: center;
+}
+
+/* Mobile Menu styling logic */
+@media (max-width: 500px) {
+    .nav-link {
+        display: none; /* Hide by default on mobile */
+        flex-direction: column;
+        position:absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-link.active {
+        display: flex; /* Show when 'active' class is toggled by JS */
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 28px;
+    }
+}
+/* ============================================================
+   FINAL FIXES: MENU ICON, MOBILE NAV, AND FOOTER
+   (Add this at the very bottom of your index1.css)
+   ============================================================ */
+
+/* 1. Ensure the Menu Icon is actually visible on mobile */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 5%; /* Reduce padding to prevent overflow */
+        position: fixed; /* Ensure absolute positioning is relative to header */
+    }
+    .menu-icon {
+        display: block !important; /* Overrides the 'display: none' on line 177 */
+        font-size: 32px;
+        color: var(--black);
+        cursor: pointer;
+        z-index: 1001;
+        position: relative; /* Ensure it's in flow */
+    }
+
+    /* 2. Position the mobile menu correctly under the header */
+    .nav-link {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Position right below the header */
+        left: 0;
+        width: 100vw; /* Full viewport width to stay within bounds */
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        text-align: center;
+        gap: 15px;
+        z-index: 1000;
+    }
+
+    /* 3. When JS adds the .active class, show the menu */
+    .nav-link.active {
+        display: flex !important;
+    }
+}
+
+/* 4. Layout Fix: Ensure Footer stays at bottom and doesn't hide */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Makes body at least the height of the screen */
+}
+
+section {
+    flex: 1 0 auto; /* This allows sections to grow and push the footer down */
+}
+
+footer {
+    flex-shrink: 0; /* Prevents the footer from squishing */
+    width: 100%;
+    background: #111;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 50px; /* Adds space above the footer */
+}
+
+/* 5. Mobile Adjustment for About boxes (AB, AB2, AB3) */
+@media (max-width: 768px) {
+    .para {
+        flex-direction: column !important;
+        height: auto !important;
+    }
+    .AB, .AB2, .AB3 {
+        width: 100% !important;
+        margin-bottom: 20px;
+        overflow: visible !important; /* Fixes scroll issue on mobile */
+    }
+}
+.myIma1,.myIma2,.myIma3,.myIma4,.myIma5,.myIma6,.myIma7{
+  background-color:rgb(36, 185, 153);
+  width: 100px;
+  border-radius: 10px;
+}

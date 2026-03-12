@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColthIt</title>
+    <link rel="stylesheet" href="index1.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo" id="cloth1">CLOTHIT</div>
+        <nav class="navbar">
+            <ul class="nav-link">
+                <li ><a href="#home"><i class="bx bx-home"></i>Home</a></li>
+                <li><a href="#about"><i class="bx bx-user"></i>About</a></li>
+                <li><a href="#Customize"><i class="bx bx-layer"></i>Customize</a></li>
+            </ul>
+        </nav>
+        <div class="menu-icon" id="menu-icon"><i class="bx bx-menu"></i></div>
+    </header>
+
+    <section class="home" id="home">
+        <h4 class="well">Pick Your Outfit With CLOTHIT</h4>
+        <div class="slides">
+            <div class="slider">
+                <img src="songs/front/f1.jpg">
+                <img src="songs/front/f2.jpg">
+                <img src="songs/front/f10.jpg">
+                <img src="songs/front/f4.jpg">
+                <img src="songs/front/f5.jpg">
+                <img src="songs/front/f11.jpg">
+                <img src="songs/front/f8.jpg">
+            </div>
+            <div class="button">
+                <button onclick="pre()">&#10094</button>
+                <button onclick="next()">&#10095</button>
+            </div>
+        </div>
+    </section>
+  <section  class="about" id="about">
+      <h2 class="about-cloth">Clothing Customizer Webpage</h2>
+      <div class="para">
+      <div class="AB">
+      <p class="cloth-para">
+        <h3 id="cloth1">Wear Your Story</h3>
+<di id="cloth">From functional protection to bold self-expression, clothing is the art you live in. Whether you're chasing trends or honoring heritage, your wardrobe is the ultimate canvas for your personality. Style isn't just what you wear—it’s who you are.</di></p>
+</div>
+<div class="AB2">
+<p class="cloth-para"><h3 id="cloth1">Your Digital Wardrobe, Reimagined</h3>
+<di id="cloth">Design the perfect look with our interactive Clothing Customizer. Mix and match tops, bottoms, and accessories in real-time. Feeling adventurous? Use the Randomizer for instant inspiration. Once you’ve mastered your style, download your creation and save your signature outfit with a single click.</di></p>
+</div>
+<div class="AB3">
+<p class="cloth-para"><h3 id="cloth1">Beyond the Fabric</h3>
+<di id="cloth">Clothes do more than protect us from the elements; they define our identity. Combining practical comfort with aesthetic flair, the right outfit transforms a simple garment into a statement of creativity and culture.</di></p>
+</div>
+</div>
+    </section>
+
+    <section class="Customize" id="Customize">
+        <div class="cust">
+            <div class="cus">
+                <button class="custom" id="Customise">Customize</button>
+            </div>
+            
+            <div class="customs">
+                <!-- MALE SECTION START -->
+                <div class="male">
+                    <div class="M">
+                        <button class="maleCust">Male Section</button>
+                    </div>
+                    <div class="container">
+                        <div class="leftM">
+                            <h2 class="shirts" id="cloth1">Shirts</h2>
+                            <input type="file" id="upload" multiple accept="image/*" class="myIma1">
+                            <div id="preview"></div>
+                        </div>
+                        <div class="leftM">
+                            <h2 id="cloth1">Jacket</h2>
+                            <input type="file" id="upload2" multiple accept="image/*" class="myIma1"/>
+                            <div id="preview2"></div>
+                            <img id="Male2" src="">
+                        </div>
+                        <div class="centerM">
+                            <h2 id="cloth1">Customize your cloth</h2>
+                            <div class="mainM">
+                                <img id="mainImageM" src="">
+                                <img id="mainImageM2" src="">
+                                <img id="mainImageM3" src="">
+                            </div>
+                            <button class="downloadM" onclick="downloadM()">Download</button>
+                            <div class="modal-overlay" id="down-male">
+                                <p>Warning: Please select at least one clothing item before downloading!</p>
+                            </div>
+                        </div>
+                        <div class="rightM">
+                            <h2 class="shorts" id="cloth1">Pants</h2>
+                            <input type="file" id="upload3" multiple accept="image/*" class="myIma1"/>
+                            <div id="preview3"></div>
+                            <img id="Male3" src="">
+                        </div>
+                        <div class="rightM">
+                            <h2 class="pantsM" id="cloth1">Short</h2>
+                            <input type="file" id="upload4" multiple accept="image/*" class="myIma2"/>
+                            <div id="preview4"></div>
+                            <img id="Male4" src="">
+                        </div>
+                    </div> <!-- End Container -->
+                    
+                    <div class="shoesM">
+                        <h2 id="cloth1">Shoes</h2>
+                        <input type="file" id="upload5" multiple accept="image/*" class="myIma3"/>
+                        <div id="preview5"></div>
+                        <img id="Male5" src="">
+                        <img id="mainShirt">
+<img id="mainJacket">
+<img id="mainPants">
+<img id="mainShoes">
+                        <button class="RandomizerM" onclick="randomM()">Randomizer</button>
+                    </div>
+                </div> <!-- END MALE SECTION -->
+
+                <!-- FEMALE SECTION START -->
+                <div class="female">
+                    <div class="F">
+                        <button class="femaleCust">Female Section</button>
+                    </div>
+                    <div class="container">
+                        <div class="left">
+                            <h2 class="tops" id="cloth1">Tops</h2>
+                            <input type="file" id="uploadF" multiple accept="image/*" class="myIma4">
+                            <div id="previewF"></div>
+                            <img id="Female1" src="">
+                        </div>
+                        <div class="left">
+                            <h2 id="cloth1">Dress</h2>
+                            <input type="file" id="uploadF2" multiple accept="image/*" class="myIma5">
+                            <div id="previewF2"></div>
+                            <img id="Female2" src="">
+                        </div>
+                        <div class="center">
+                            <h2 id="cloth1">Customize your cloth</h2>
+                            <div class="mainF">
+                                <img id="mainImage" src="">
+                                <img id="mainImage2" src="">
+                                <img id="mainImage3" src="">
+                            </div>
+                            <button class="download" onclick="downloadF()">Download</button>
+                            <div class="modal-overlay" id="down-female">
+                                <p>Warning: Please select at least one clothing item before downloading!</p>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <h2 id="cloth1">Skirts</h2>
+                            <input type="file" id="uploadF3" multiple accept="image/*" class="myIma5"/>
+                            <div id="previewF3"></div>
+                            <img id="Female3" src="">
+                        </div>
+                        <div class="right">
+                            <h2 class="pants" id="cloth1">Pants</h2>
+                            <input type="file" id="uploadF4" multiple accept="image/*" class="myIma6"/>
+                            <div id="previewF4"></div>
+                            <img id="Female4" src="">
+                        </div>
+                    </div> <!-- End Container -->
+
+                    <div class="shoes">
+                        <h2 id="cloth1">Shoes</h2>
+                        <input type="file" id="uploadF5" multiple accept="image/*" class="myIma7"/>
+                        <div id="previewF5"></div>
+                        <img id="Female5" src="">
+                        <button class="RandomizerF" onclick="randomF()">Randomizer</button>
+                    </div>
+                </div> <!-- END FEMALE SECTION -->
+            </div> <!-- End customs -->
+      
+      </div> <!-- End cust -->
+      
+    </section>
+
+<footer>
+    <p>Copyright &copy; 2026 ClothIt. All rights reserved.</p>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@latest"></script>
+    <script src="index1.js"></script>
+</body>
+</html>
