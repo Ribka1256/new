@@ -362,39 +362,27 @@ if (footElement) {
 const menuIcon = document.querySelector("#menu-icon");
 const navbar = document.querySelector(".nav-link");
 
-if (menuIcon && navbar) {
-    menuIcon.addEventListener("click", () => {
-        navbar.classList.toggle("active");
-        // Optional: Toggle icon between menu and 'X'
-        const icon = menuIcon.querySelector("i");
-        icon.classList.toggle("bx-menu");
-        icon.classList.toggle("bx-x");
-    });
+if(menuIcon && navbar) {
+  menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+    const icon = menuIcon.querySelector("i");
+    if (navbar.classList.contains("active")) {
+      icon.classList.replace("bx-menu", "bx-x");
+    } else {
+      icon.classList.replace("bx-x", "bx-menu");
+    }
+
+  })
 }
 
 // 3. Smooth Scrolling for Navigation (Making links work)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-        
-        // Close mobile menu after clicking a link
-        if (navbar.classList.contains("active")) {
-            navbar.classList.remove("active");
-            const icon = menuIcon.querySelector("i");
-            icon.classList.add("bx-menu");
-            icon.classList.remove("bx-x");
-        }
+document.querySelectorAll('.nav-link li a').forEach(link => {
+    link.addEventListener('click', () => {
+        navbar.classList.remove("active");
+        const icon = menuIcon.querySelector("i");
+        icon.classList.replace("bx-x", "bx-menu");
     });
 });
-
 // 4. "Back to Top" behavior (Clicking footer text scrolls up)
 if (footElement) {
     footElement.style.cursor = "pointer";
