@@ -348,7 +348,7 @@ p.displaySlide{
 .AB, .AB2,.AB3{
     display: flex;
     flex-direction: column;
-    background-color:white;
+    background-color:rgba(58, 56, 56, 0.596);
     text-align: center;
     max-width: 100vh;
     margin: auto;
@@ -357,6 +357,7 @@ p.displaySlide{
     box-shadow: 5px 5px 15px;
     gap: 20px;
     overflow: scroll;
+    color: rgba(255, 255, 255, 0.884);
 }
  .button button{
    margin: 20px;
@@ -382,7 +383,7 @@ p.displaySlide{
   border: 2px solid;
     display: flex;
     flex-direction: column;
-     background-color: white;
+backdrop-filter: blur(25px);
     text-align: center;
     margin: auto;
     padding: 10px;
@@ -432,102 +433,76 @@ img {
 }
 
 /* =========================
-   MOBILE RESPONSIVENESS (768px and below)
+   MOBILE NAVBAR & HERO FIX
 ========================= */
 @media (max-width: 768px) {
-  /* Header Adjustments */
-  .header {
-    padding: 15px 5%;
-  }
-  
-  .nav-link {
-    gap: 10px;
-  }
+    /* 1. Fix the Header Layout */
+    .header {
+        padding: 10px 5% !important;
+        height: 70px !important;
+        display: flex !important;
+        justify-content: space-between !important; /* Forces Logo left, Icon right */
+        align-items: center !important;
+        background: white !important;
+        z-index: 10000;
+    }
 
-  .nav-link li a {
-    font-size: 0.8rem;
-  }
+    /* 2. Force the Menu Icon to show and be visible */
+    .menu-icon {
+        display: flex !important; /* Shows the hamburger */
+        align-items: center;
+        justify-content: center;
+        font-size: 35px !important;
+        color: #a52a2a !important; /* Matches your brown logo color */
+        cursor: pointer;
+        z-index: 10001;
+    }
 
-  /* Typography */
-  .home {
-    font-size: 2.5rem;
-    padding-top: 120px;
-  }
+    /* 3. Fix the Navbar positioning */
+    .navbar {
+        position: absolute;
+        width: 0; /* Shrink container so it doesn't block flexbox */
+        height: 0;
+        overflow: visible;
+    }
 
-  .about-cloth {
-    font-size: 2rem;
-    padding: 30px 10px;
-  }
+    .nav-link {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        padding: 20px 0;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    }
 
-  .cus, .M, .F {
-    font-size: 2rem;
-  }
+    .nav-link.active {
+        display: flex !important;
+    }
 
-  /* Home Slider */
-  .slider img {
-    width: 95%;
-  }
+    /* 4. FIX THE SLIDER (The "Tiny Image" problem) */
+    .home {
+        padding-top: 100px !important; /* Prevents text from hiding under header */
+        font-size: 2rem !important;
+    }
 
-  .slides {
-    max-width: 95%;
-  }
+    .slides {
+        max-width: 90% !important; /* Ensures the box fits the screen */
+        width: 90% !important;
+        margin: 20px auto !important;
+    }
 
-  /* About Section Paragraphs */
-  .para {
-    align-items: center;
-  }
-
-  .AB, .AB2, .AB3 {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* Customize Section (The Container) */
-  .container {
-    flex-direction: column; /* Stack Left, Center, and Right vertically */
-    padding: 10px;
-  }
-
-  .left, .leftM, .right, .rightM {
-    text-align: center; /* Center align items for mobile */
-    width: 100%;
-  }
-
-  /* Fix for the Center Image area */
-  .center, .centerM {
-    width: 100%;
-    max-width: 100%;
-    padding: 20px 0;
-  }
-
-  .center img, .centerM img {
-    width: 200px; /* Scale down preview images */
-    margin: 0 auto;
-  }
-
-  .mainF, .mainM {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Shoes/Bottom section images */
-  .shoes, .shoesM {
-    display: flex;
-    flex-wrap: wrap; /* Allow shoe icons to wrap to next line */
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .shoes img, .shoesM img {
-    width: 80px; /* Smaller icons for mobile screens */
-  }
-
-  /* Buttons */
-  .custom {
-    width: 90%;
-    font-size: 1rem;
-  }
+    .slider img {
+        width: 100% !important; /* Image takes full width of its container */
+        height: auto !important; /* Maintains aspect ratio */
+        border-radius: 15px;
+    }
+    
+    .button button {
+        font-size: 20px !important; /* Smaller arrows for mobile */
+    }
 }
 
 /* =========================
@@ -649,7 +624,7 @@ img {
     /* Fix for the Header/Logo area overlapping */
     .header {
         backdrop-filter: blur(25px); /* Ensure header is readable over text */
-      .header{
+     
     position: fixed;      /* Keeps header fixed when scrolling */
     top: 0;               /* Stick to the top */
     left: 0;
@@ -665,7 +640,7 @@ img {
     body{
       width: 100%;
     }
-}
+
 
 /* Ensure the footer is always at the bottom if content is short */
 body {
@@ -746,19 +721,34 @@ footer {
     }
 
     /* 2. Position the mobile menu correctly under the header */
-    .nav-link {
-        display: none; /* Hidden by default */
+     .nav-link {
+        display: none; /* Hidden until toggled */
         flex-direction: column;
+        
+        /* FIX: These three lines ensure full-width alignment */
         position: absolute;
-        top: 100%; /* Position right below the header */
-        left: 0;
-        width: 100vw; /* Full viewport width to stay within bounds */
+        top: 100%;     /* Sits right below the header */
+        left: 0;       /* Force it to the far left of the header */
+        width: 100%;   /* Fill the entire width of the header */
+        
         background-color: white;
-        padding: 20px;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        padding: 20px 0; /* Padding top/bottom, 0 on sides to prevent offset */
         text-align: center;
-        gap: 15px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         z-index: 1000;
+        margin: 0;      /* Reset any margins */
+    }
+
+    /* Reset the parent navbar so it doesn't constrain the menu */
+    .navbar {
+        padding: 0;
+        margin: 0;
+        position: static; /* Allows the absolute child to reference the .header instead */
+    }
+
+    .nav-link li {
+        width: 100%;   /* Make each list item full width for better clicking */
+        padding: 10px 0;
     }
 
     /* 3. When JS adds the .active class, show the menu */
@@ -804,4 +794,117 @@ footer {
   background-color:rgb(36, 185, 153);
   width: 100px;
   border-radius: 10px;
+}/* ============================================================
+   MOBILE HEADER & FULL-WIDTH MENU ADJUSTMENT
+   (Append to the bottom of index1.css)
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* 1. Ensure Header stays on top and spans full width */
+    .header {
+        padding: 10px 5% !important; /* Tighter padding for mobile */
+        height: 70px; /* Fixed height for consistency */
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        background: rgba(255, 255, 255, 0.98) !important; /* Solid background to block lower filters */
+        z-index: 100000 !important;
+    }
+
+    /* 2. Fix the Navbar container so it doesn't restrict the menu width */
+    .navbar {
+        position: static !important; /* Allows absolute child to reference the .header */
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 3. Force Menu List to be exactly full width */
+    .nav-link {
+        display: none; /* Controlled by JS toggle */
+        flex-direction: column !important;
+        
+        /* Position Logic */
+        position: absolute !important;
+        top: 70px !important; /* Must match the header height exactly */
+        left: 0 !important;   /* Aligns to the very left of the screen */
+        width: 100vw !important; /* Full Viewport Width */
+        
+        background-color: white !important;
+        padding: 20px 0 !important;
+        margin: 0 !important;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1) !important;
+        z-index: 99999 !important;
+    }
+
+    /* 4. Center the text inside the full-width menu */
+    .nav-link li {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 15px 0 !important;
+        border-bottom: 1px solid #f0f0f0; /* Subtle separator */
+    }
+
+    .nav-link li:last-child {
+        border-bottom: none;
+    }
+
+    /* 5. Center the Menu Icon vertically in the Header */
+    .menu-icon {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 35px !important;
+        height: 100% !important;
+        margin: 0 !important;
+        z-index: 100001 !important;
+    }
+}
+/* ============================================================
+   TARGETED FIXES FOR PHONE BACKGROUND & MENU WIDTH
+   ============================================================ */
+
+/* 1. Fix the background stretching on phones */
+body {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important; /* Keeps image still and properly sized */
+}
+
+@media (max-width: 768px) {
+    /* 2. Fix the Header visibility and Z-index */
+    .header {
+        background: rgba(255, 255, 255, 0.98) !important; /* Make it solid enough to cover content below */
+        z-index: 999999 !important; /* Keep it above ALL blurs */
+        padding: 10px 5% !important;
+    }
+
+    /* 3. Fix the menu width problem (Forces it to span the whole screen) */
+    .navbar {
+        position: static !important; /* Required to let the menu span full width */
+    }
+
+    .nav-link {
+        position: absolute !important;
+        top: 100% !important; /* Sits right under the header */
+        left: 0 !important;    /* Start at the very left edge */
+        width: 100% !important; /* Stretch to the very right edge */
+        background-color: white !important;
+        padding: 20px 0 !important;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1) !important;
+    }
+
+    /* 4. Ensure the Menu Icon is centered vertically and visible */
+    .menu-icon {
+        display: flex !important;
+        align-items: center !important;
+        z-index: 1000000 !important;
+        font-size: 32px !important;
+    }
+
+    /* 5. Center the links inside your new full-width menu */
+    .nav-link li {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 10px 0 !important;
+    }
 }

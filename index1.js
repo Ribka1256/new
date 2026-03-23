@@ -359,22 +359,39 @@ if (footElement) {
 }
 
 // 2. Mobile Menu Toggle (Making the Menu Icon work)
-const menuIcon = document.querySelector("#menu-icon");
-const navbar = document.querySelector(".nav-link");
+/* ==========================================
+   MOBILE NAVIGATION LOGIC 
+   ========================================== */
 
-if(menuIcon && navbar) {
-  menuIcon.addEventListener("click", () => {
-    navbar.classList.toggle("active");
-    const icon = menuIcon.querySelector("i");
-    if (navbar.classList.contains("active")) {
-      icon.classList.replace("bx-menu", "bx-x");
-    } else {
-      icon.classList.replace("bx-x", "bx-menu");
-    }
+const menuBtn = document.getElementById("menu-icon");
+const navMenu = document.querySelector(".nav-link");
 
-  })
+if (menuBtn && navMenu) {
+    menuBtn.addEventListener("click", function() {
+        // Toggle the 'active' class to show/hide the menu
+        navMenu.classList.toggle("active");
+        
+        // Change the icon from hamburger to "X"
+        const iconElement = menuBtn.querySelector("i");
+        if (navMenu.classList.contains("active")) {
+            iconElement.classList.replace("bx-menu", "bx-x");
+        } else {
+            iconElement.classList.replace("bx-x", "bx-menu");
+        }
+    });
+
+    document.querySelectorAll(".nav-link a").forEach(link => {
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+            const iconElement = menuBtn.querySelector("i");
+            iconElement.classList.replace("bx-x", "bx-menu");
+        });
+    });
 }
 
+/* ============================================================
+   END OF MOBILE NAVBAR LOGIC
+   ============================================================ */
 // 3. Smooth Scrolling for Navigation (Making links work)
 document.querySelectorAll('.nav-link li a').forEach(link => {
     link.addEventListener('click', () => {
